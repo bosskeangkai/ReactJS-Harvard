@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <title>React</title>
+    </head>
+
+    <body>
+        <div id="app">
+            <script type="text/babel">
+                class Hello extends React.Component {
+                    render() {
+                        return(
+                            <div>
+                                <h1>
+                                    Hello {this.props.name || "KD"}!
+                                </h1>
+                                <button onClick={this.handleClick}>Click me!</button>
+                            </div>
+                        );
+                    }
+
+                    handleClick = () => {
+                        alert('Hello!'); 
+                        // alert('Hello!' + this.props.name);
+                    }
+                }
+
+                // ReactDOM.render(<Hello />, document.querySelector('#app'));
+                
+                class App extends React.Component{
+                    render() {
+                        return (
+                            <div>
+                                <Hello name="Boss"/>
+                                <Hello name="Keangkai"/>
+                                <Hello name="Ben" />
+                                <Hello name="Curry" />
+                                <Hello name="LeBron" />
+                                <Hello name="Thomson" />
+                                <Hello />
+                            </div>
+                        );
+                    }
+                }
+                ReactDOM.render(<App/>, document.querySelector('#app'));
+            </script>
+        </div>
+    </body>
+</html>
